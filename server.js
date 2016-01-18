@@ -25,9 +25,6 @@ app.get('/todos', function(req, res){
 		filteredTodos = _.where(filteredTodos, {completed: false});
 	}
 
-	//"go to work on saturday".indexOf('query param') returns a position. so, 
-	//check if it's greater than -1
-
 	if(queryParams.hasOwnProperty('q') && queryParams.q.length > 0){
 		filteredTodos = _.filter(filteredTodos, function(todo){
 			return todo.description.toLowerCase().indexOf(queryParams.q.toLowerCase()) > -1;
